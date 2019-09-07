@@ -30,11 +30,13 @@ def checkave(a):
     return true_ave_score
   return a
 
+#quick check of the position of the average score
+
 for i in companies:
   if i[0] == company:
     companysales = float(i[1])
     companyprofit = float(i[2])
-    companyscore = round(((i[2]/i[1])*100)**3, 3)
+    companyscore = round(((i[2]/i[1])*100)**3, 3)  #assess performance based on profits earned from number of sales, and cubed to magnify significance
 
 for j in companies:
   score = round(((j[2]/j[1])*100)**3, 3)
@@ -50,7 +52,7 @@ lowerpercentile = int(round(n*0.9,0))
 lp_score = ranked[lowerpercentile]
 
 
-## removing the outliers top 90 percentile and below 10 percentile
+#removing the outliers top 90 percentile and below 10 percentile
 true_sum = 0.
 count = toppercentile
 while count < lowerpercentile:
@@ -78,7 +80,7 @@ if companyscore >= great_i:
 
 
 
-##commented out the below for future descriptive statistical analysis
+#commented out the below for future descriptive statistical analysis
 
 """
 sum_sales = 0.
